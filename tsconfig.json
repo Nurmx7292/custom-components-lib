@@ -11,7 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "types": ["node"],
+    "types": ["node","jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
@@ -29,8 +29,6 @@
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx",
     "**/*.stories.ts",
     "**/*.stories.tsx"
   ]
