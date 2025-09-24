@@ -29,5 +29,3 @@ export const Medium: Story = { args: { size: 'medium' } };
 export const Large: Story = { args: { size: 'large' } };
 
 export const Disabled: Story = { args: { disabled: true } };
-
-

@@ -42,7 +42,7 @@ describe('Button', () => {
     render(
       <Button disabled type="button" onClick={onClick} className="extra">
         Action
-      </Button>
+      </Button>,
     );
     const btn = screen.getByRole('button', { name: /action/i });
     expect(btn).toBeDisabled();
@@ -60,5 +60,3 @@ describe('Button', () => {
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
-
-

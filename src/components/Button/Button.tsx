@@ -16,12 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   children,
   ...rest
 }) => {
-  const classes = [
-    styles.button,
-    styles[variant],
-    styles[size],
-    className,
-  ]
+  const classes = [styles.button, styles[variant], styles[size], className]
     .filter(Boolean)
     .join(' ');
 
@@ -33,5 +28,3 @@ const Button: React.FC<ButtonProps> = ({
 };
 
 export default Button;
-
-
