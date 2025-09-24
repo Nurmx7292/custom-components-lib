@@ -15,7 +15,9 @@ export default (env: EnvVariables = {}): Configuration => {
 
   const config: Configuration = {
     mode,
-    entry: isProduction ? path.resolve(__dirname, 'src', 'index.ts') : path.resolve(__dirname, 'src', 'main.tsx'),
+    entry: isProduction
+      ? path.resolve(__dirname, 'src', 'index.ts')
+      : path.resolve(__dirname, 'src', 'main.tsx'),
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'index.js',
@@ -85,5 +87,3 @@ export default (env: EnvVariables = {}): Configuration => {
 
   return config;
 };
-
-
