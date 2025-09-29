@@ -1,63 +1,103 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
-.label {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(0, 0, 0, 0.6);
-  margin-bottom: 4px;
-}
-
-.input {
+.fieldset {
+  position: relative;
+  margin: 0;
+  padding: 0;
   border: 1px solid rgba(0, 0, 0, 0.23);
   border-radius: 4px;
-  padding: 12px 14px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: rgba(0, 0, 0, 0.87);
-  background-color: transparent;
+  min-inline-size: 0;
   transition: border-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
-  outline: none;
-  min-width: 0;
-  width: 100%;
-  box-sizing: border-box;
 
   &:hover {
     border-color: rgba(0, 0, 0, 0.87);
   }
 
-  &:focus {
+  &:focus-within {
     border-color: #1976d2;
     border-width: 2px;
-    padding: 11px 13px; // Adjust for thicker border
+    padding: 0;
   }
+
+  &.error {
+    border-color: #d32f2f;
+
+    &:hover {
+      border-color: #d32f2f;
+    }
+
+    &:focus-within {
+      border-color: #d32f2f;
+    }
+  }
+}
+
+.legend {
+  position: absolute;
+  top: 16px;
+  left: 14px;
+  padding: 0 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  line-height: 1;
+  z-index: 1;
+  transition: all 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  transform: translateY(0) scale(1);
+  opacity: 0;
+  pointer-events: none;
+
+  .fieldset:focus-within & {
+    color: #1976d2;
+  }
+
+  .fieldset.error:focus-within & {
+    color: #d32f2f;
+  }
+
+  &.floating {
+    top: -8px;
+    left: 8px;
+    font-size: 0.75rem;
+    opacity: 1;
+  }
+}
+
+.input {
+  border: none;
+  border-radius: 4px;
+  padding: 16px 14px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: transparent;
+  outline: none;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
 
   &:disabled {
     color: rgba(0, 0, 0, 0.38);
     cursor: default;
-    border-color: rgba(0, 0, 0, 0.23);
   }
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.42);
-  }
-}
-
-.outlined {
-  // Additional outlined-specific styles if needed
-}
-
-.error {
-  border-color: #d32f2f;
-
-  &:hover {
-    border-color: #d32f2f;
+    opacity: 1;
+    transition: opacity 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
   }
 
   &:focus {
-    border-color: #d32f2f;
+    padding: 16px 14px;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
   }
 }
