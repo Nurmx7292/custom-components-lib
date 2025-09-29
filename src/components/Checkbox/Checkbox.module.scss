@@ -54,9 +54,10 @@
 }
 
 .checkmark {
+  bottom: 5px;
   position: absolute;
-  width: 6px;
-  height: 10px;
+  width: 7px;
+  height: 12px;
   border: solid #fff;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg) scale(0);
