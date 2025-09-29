@@ -24,21 +24,12 @@ const Switch: React.FC<SwitchProps> = ({
   ...rest
 }) => {
   const switchId = id || `switch-${Math.random().toString(36).substr(2, 9)}`;
-  
-  const containerClasses = [
-    styles.container,
-    disabled && styles.disabled,
-    className,
-  ]
+
+  const containerClasses = [styles.container, disabled && styles.disabled, className]
     .filter(Boolean)
     .join(' ');
 
-  const switchClasses = [
-    styles.switch,
-    styles[size],
-    styles[color],
-    checked && styles.checked,
-  ]
+  const switchClasses = [styles.switch, styles[size], styles[color], checked && styles.checked]
     .filter(Boolean)
     .join(' ');
 

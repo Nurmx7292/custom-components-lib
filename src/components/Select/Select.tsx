@@ -23,13 +23,8 @@ const Select: React.FC<SelectProps> = ({
   ...rest
 }) => {
   const selectId = id || `select-${Math.random().toString(36).substr(2, 9)}`;
-  
-  const selectClasses = [
-    styles.select,
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+
+  const selectClasses = [styles.select, className].filter(Boolean).join(' ');
 
   return (
     <div className={styles.container}>
@@ -38,22 +33,14 @@ const Select: React.FC<SelectProps> = ({
           {label}
         </label>
       )}
-      <select
-        id={selectId}
-        className={selectClasses}
-        {...rest}
-      >
+      <select id={selectId} className={selectClasses} {...rest}>
         {placeholder && (
           <option value="" disabled>
             {placeholder}
           </option>
         )}
         {options.map((option) => (
-          <option
-            key={option.value}
-            value={option.value}
-            disabled={option.disabled}
-          >
+          <option key={option.value} value={option.value} disabled={option.disabled}>
             {option.label}
           </option>
         ))}

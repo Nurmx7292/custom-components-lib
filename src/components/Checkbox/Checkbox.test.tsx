@@ -35,7 +35,7 @@ describe('Checkbox', () => {
         className="custom-class"
         name="test-checkbox"
         value="test-value"
-      />
+      />,
     );
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toHaveAttribute('name', 'test-checkbox');
@@ -48,7 +48,7 @@ describe('Checkbox', () => {
   test('generates unique id when not provided', () => {
     render(<Checkbox label="Label 1" />);
     render(<Checkbox label="Label 2" />);
-    
+
     const checkboxes = screen.getAllByRole('checkbox');
     expect(checkboxes[0].id).not.toBe(checkboxes[1].id);
   });
@@ -69,7 +69,7 @@ describe('Checkbox', () => {
     const onChange = jest.fn();
     render(<Checkbox label="Clickable" onChange={onChange} />);
     const checkbox = screen.getByRole('checkbox');
-    
+
     fireEvent.click(checkbox);
     expect(onChange).toHaveBeenCalledTimes(1);
   });
@@ -78,7 +78,7 @@ describe('Checkbox', () => {
     const onChange = jest.fn();
     render(<Checkbox label="Disabled" disabled onChange={onChange} />);
     const checkbox = screen.getByRole('checkbox');
-    
+
     fireEvent.click(checkbox);
     expect(onChange).not.toHaveBeenCalled();
   });

@@ -16,13 +16,8 @@ const TextField: React.FC<TextFieldProps> = ({
   ...rest
 }) => {
   const inputId = id || `textfield-${Math.random().toString(36).substr(2, 9)}`;
-  
-  const inputClasses = [
-    styles.input,
-    styles[variant],
-    error && styles.error,
-    className,
-  ]
+
+  const inputClasses = [styles.input, styles[variant], error && styles.error, className]
     .filter(Boolean)
     .join(' ');
 
@@ -33,11 +28,7 @@ const TextField: React.FC<TextFieldProps> = ({
           {label}
         </label>
       )}
-      <input
-        id={inputId}
-        className={inputClasses}
-        {...rest}
-      />
+      <input id={inputId} className={inputClasses} {...rest} />
     </div>
   );
 };

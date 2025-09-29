@@ -35,5 +35,3 @@ describe('Switch', () => {
     expect(screen.getByRole('checkbox')).toHaveAttribute('id', 'custom-id');
   });
 });
-
-

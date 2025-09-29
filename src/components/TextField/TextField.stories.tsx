@@ -52,4 +52,3 @@ export const Required: Story = {
     placeholder: 'This field is required',
   },
 };
-

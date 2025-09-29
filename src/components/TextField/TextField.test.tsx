@@ -35,7 +35,7 @@ describe('TextField', () => {
         type="email"
         onChange={onChange}
         className="custom-class"
-      />
+      />,
     );
     const input = screen.getByRole('textbox');
     expect(input).toHaveAttribute('placeholder', 'Enter text');
@@ -50,7 +50,7 @@ describe('TextField', () => {
   test('generates unique id when not provided', () => {
     render(<TextField label="Label 1" />);
     render(<TextField label="Label 2" />);
-    
+
     const inputs = screen.getAllByRole('textbox');
     expect(inputs[0].id).not.toBe(inputs[1].id);
   });
@@ -61,4 +61,3 @@ describe('TextField', () => {
     expect(input).toHaveAttribute('id', 'custom-id');
   });
 });
-

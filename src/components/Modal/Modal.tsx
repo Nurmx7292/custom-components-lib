@@ -24,7 +24,7 @@ const Modal: React.FC<ModalProps> = ({
         onClose();
       }
     },
-    [onClose]
+    [onClose],
   );
 
   useEffect(() => {
@@ -48,8 +48,16 @@ const Modal: React.FC<ModalProps> = ({
   };
 
   return (
-    <div className={[styles.backdrop, backdropClassName].filter(Boolean).join(' ')} onClick={onBackdropClick}>
-      <div className={[styles.content, className].filter(Boolean).join(' ')} onClick={stopPropagation} role="dialog" aria-modal="true">
+    <div
+      className={[styles.backdrop, backdropClassName].filter(Boolean).join(' ')}
+      onClick={onBackdropClick}
+    >
+      <div
+        className={[styles.content, className].filter(Boolean).join(' ')}
+        onClick={stopPropagation}
+        role="dialog"
+        aria-modal="true"
+      >
         {children}
       </div>
     </div>
@@ -57,5 +65,3 @@ const Modal: React.FC<ModalProps> = ({
 };
 
 export default Modal;
-
-

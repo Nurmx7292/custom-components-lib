@@ -37,5 +37,3 @@ export const CheckedSecondary: Story = {
 export const Disabled: Story = {
   args: { disabled: true },
 };
-
-

@@ -15,12 +15,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
   ...rest
 }) => {
   const checkboxId = id || `checkbox-${Math.random().toString(36).substr(2, 9)}`;
-  
-  const containerClasses = [
-    styles.container,
-    disabled && styles.disabled,
-    className,
-  ]
+
+  const containerClasses = [styles.container, disabled && styles.disabled, className]
     .filter(Boolean)
     .join(' ');
 
