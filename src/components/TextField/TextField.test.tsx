@@ -30,7 +30,6 @@ describe('TextField', () => {
     const onChange = jest.fn();
     render(
       <TextField
-        placeholder="Enter text"
         disabled
         type="email"
         onChange={onChange}
@@ -38,7 +37,6 @@ describe('TextField', () => {
       />,
     );
     const input = screen.getByRole('textbox');
-    expect(input).toHaveAttribute('placeholder', 'Enter text');
     expect(input).toBeDisabled();
     expect(input).toHaveAttribute('type', 'email');
     expect(input.classList.contains('custom-class')).toBe(true);

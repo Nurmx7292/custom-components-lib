@@ -6,7 +6,7 @@ const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
   component: TextField,
   args: {
-    placeholder: 'Enter text',
+    
   },
   argTypes: {
     error: { control: 'boolean' },
@@ -19,7 +19,6 @@ const meta: Meta<typeof TextField> = {
 export default meta;
 type Story = StoryObj<typeof TextField>;
 
-export const Default: Story = {};
 
 export const WithLabel: Story = {
   args: {
@@ -33,7 +32,6 @@ export const Error: Story = {
     label: 'Password',
     type: 'password',
     error: true,
-    placeholder: 'Enter password',
   },
 };
 
@@ -45,10 +43,3 @@ export const Disabled: Story = {
   },
 };
 
-export const Required: Story = {
-  args: {
-    label: 'Required Field',
-    required: true,
-    placeholder: 'This field is required',
-  },
-};
