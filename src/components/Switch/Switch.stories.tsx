@@ -26,13 +26,6 @@ export const UncontrolledLike: Story = {
   },
 };
 
-export const CheckedPrimary: Story = {
-  args: { checked: true, color: 'primary' },
-};
-
-export const CheckedSecondary: Story = {
-  args: { checked: true, color: 'secondary' },
-};
 
 export const Disabled: Story = {
   args: { disabled: true },
