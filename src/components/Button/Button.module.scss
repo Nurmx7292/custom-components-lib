@@ -1,0 +1,86 @@
+.button {
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+  text-transform: uppercase;
+  transition: background-color 150ms ease, box-shadow 150ms ease, color 150ms ease, border-color 150ms ease;
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+.text {
+  background: transparent;
+  color: #1976d2;
+  padding: 6px 8px;
+
+  &:hover {
+    background: rgba(25, 118, 210, 0.04);
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(25, 118, 210, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+.contained {
+  background: #1976d2;
+  color: #fff;
+  padding: 6px 16px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    background: #1565c0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(21, 101, 192, 0.6);
+    outline-offset: 2px;
+  }
+}
+
+.outlined {
+  background: transparent;
+  color: #1976d2;
+  padding: 5px 15px;
+  border: 1px solid rgba(25, 118, 210, 0.5);
+
+  &:hover {
+    background: rgba(25, 118, 210, 0.04);
+    border-color: #1976d2;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(25, 118, 210, 0.5);
+    outline-offset: 2px;
+  }
+}
+
+/* Sizes */
+.small {
+  height: 32px;
+  font-size: 0.8125rem;
+}
+
+.medium {
+  height: 36px;
+  font-size: 0.875rem;
+}
+
+.large {
+  height: 42px;
+  font-size: 0.9375rem;
+}
+
+
