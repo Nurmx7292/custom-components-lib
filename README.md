@@ -1,9 +1,12 @@
 # Custom Components Library
 
-TypeScript React component library styled with CSS Modules (SCSS). Components follow MUI-like behavior (variants, floating labels, accessibility).
+TypeScript React component library styled with CSS Modules (SCSS). Components follow MUI-like behavior (variants, floating labels, etc.).
+GitHub Repository: [Link to repository](https://github.com/Nurmx7292/custom-components-lib)
 
 ## Task
 Innowise Lab Internship: Custom-components-lib — build a custom UI library, publish to npm, verify in a separate React app.
+Task documentation: [Link to task](https://drive.google.com/file/d/1C148FRnWfXVoRDslDWcYac3bEhebdIAV/view)
+
 
 ## Stack
 - React + TypeScript
