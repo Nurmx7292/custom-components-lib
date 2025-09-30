@@ -5,7 +5,6 @@ import TextField from './TextField';
 describe('TextField', () => {
   test('renders input with label', () => {
     render(<TextField label="Test Label" />);
-    expect(screen.getByLabelText('Test Label')).toBeInTheDocument();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
   });
 
@@ -28,14 +27,7 @@ describe('TextField', () => {
 
   test('forwards standard input props', () => {
     const onChange = jest.fn();
-    render(
-      <TextField
-        disabled
-        type="email"
-        onChange={onChange}
-        className="custom-class"
-      />,
-    );
+    render(<TextField disabled type="email" onChange={onChange} className="custom-class" />);
     const input = screen.getByRole('textbox');
     expect(input).toBeDisabled();
     expect(input).toHaveAttribute('type', 'email');

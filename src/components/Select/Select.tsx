@@ -26,6 +26,7 @@ const Select: React.FC<SelectProps> = ({
   onFocus,
   onBlur,
   error = false,
+  multiple,
   children,
   ...rest
 }) => {
@@ -33,15 +34,18 @@ const Select: React.FC<SelectProps> = ({
 
   const [isFocused, setIsFocused] = useState(false);
   const [internalValue, setInternalValue] = useState(
-    (defaultValue as any) ?? ''
+    (defaultValue as any) ?? (multiple ? [] : '')
   );
 
   const rawValue = value !== undefined ? value : internalValue;
-  const hasValue =
-    rawValue !== undefined &&
-    rawValue !== null &&
-    !(typeof rawValue === 'string' && rawValue === '');
-  const currentValue = hasValue ? (rawValue as any) : '';
+  const hasValue = Array.isArray(rawValue)
+    ? rawValue.length > 0
+    : rawValue !== undefined && rawValue !== null && !(typeof rawValue === 'string' && rawValue === '');
+
+  const currentValue = multiple
+    ? (hasValue ? (Array.isArray(rawValue) ? rawValue : [rawValue]) : [])
+    : (hasValue ? (rawValue as any) : '');
+
   const shouldFloatLabel = isFocused || hasValue;
 
   const selectClasses = [styles.select, className]
@@ -57,6 +61,15 @@ const Select: React.FC<SelectProps> = ({
     .join(' ');
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (multiple) {
+      const values = Array.from(e.target.selectedOptions).map((opt) => opt.value);
+      if (value === undefined) {
+        setInternalValue(values as any);
+      }
+      onChange?.(e);
+      return;
+    }
+
     if (value === undefined) {
       setInternalValue(e.target.value);
     }
@@ -80,13 +93,14 @@ const Select: React.FC<SelectProps> = ({
         <select
           id={selectId}
           className={selectClasses}
-          value={currentValue}
+          value={currentValue as any}
+          multiple={multiple}
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           {...rest}
         >
-          {!hasValue && label && (
+          {!multiple && !hasValue && label && (
             <option value="" disabled hidden>
               {isFocused ? '' : label}
             </option>
