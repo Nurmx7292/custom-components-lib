@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useState } from 'react';
 import Modal from './Modal';
+import Button from '../Button/Button';
 
 const meta: Meta<typeof Modal> = {
   title: 'Components/Modal',
@@ -24,11 +25,11 @@ export const Controlled: Story = {
     const [open, setOpen] = useState(false);
     return (
       <div>
-        <button onClick={() => setOpen(true)}>Open modal</button>
+        <Button variant="outlined" onClick={() => setOpen(true)}>Open modal</Button>
         <Modal {...args} open={open} onClose={() => setOpen(false)}>
           <div>
             <h3>Controlled Modal</h3>
-            <button onClick={() => setOpen(false)}>Close</button>
+            <Button variant="text" onClick={() => setOpen(false)}>Close</Button>
           </div>
         </Modal>
       </div>
