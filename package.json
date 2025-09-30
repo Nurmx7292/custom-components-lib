@@ -1,11 +1,16 @@
 {
   "name": "custom-components-lib",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "build:prod": "webpack --env mode=production",
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build",
     "build:dev": "webpack --env mode=development",
     "dev": "webpack serve --env mode=development --env port=3000",
     "lint": "eslint .",
@@ -15,7 +20,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "author": "",
+  "author": "Nurmx7292",
   "license": "MIT",
   "description": "MUI Based React Components",
   "peerDependencies": {
