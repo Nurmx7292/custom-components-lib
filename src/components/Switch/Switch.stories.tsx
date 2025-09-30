@@ -21,11 +21,11 @@ type Story = StoryObj<typeof Switch>;
 
 export const UncontrolledLike: Story = {
   render: (args) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [checked, setChecked] = useState(args.checked);
     return <Switch {...args} checked={checked} onChange={setChecked} />;
   },
 };
-
 
 export const Disabled: Story = {
   args: { disabled: true },

@@ -22,14 +22,19 @@ export const Open: Story = {
 
 export const Controlled: Story = {
   render: (args) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [open, setOpen] = useState(false);
     return (
       <div>
-        <Button variant="outlined" onClick={() => setOpen(true)}>Open modal</Button>
+        <Button variant="outlined" onClick={() => setOpen(true)}>
+          Open modal
+        </Button>
         <Modal {...args} open={open} onClose={() => setOpen(false)}>
           <div>
             <h3>Controlled Modal</h3>
-            <Button variant="text" onClick={() => setOpen(false)}>Close</Button>
+            <Button variant="text" onClick={() => setOpen(false)}>
+              Close
+            </Button>
           </div>
         </Modal>
       </div>

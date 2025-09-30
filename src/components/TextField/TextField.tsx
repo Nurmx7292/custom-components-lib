@@ -46,39 +46,22 @@ const TextField: React.FC<TextFieldProps> = ({
     onBlur?.(e);
   };
 
-  const inputClasses = [
-    styles.input,
-    styles[variant],
-    error && styles.error,
-    className,
-  ]
+  const inputClasses = [styles.input, styles[variant], error && styles.error, className]
     .filter(Boolean)
     .join(' ');
 
-  const fieldsetClasses = [
-    styles.fieldset,
-    error && styles.error,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const fieldsetClasses = [styles.fieldset, error && styles.error].filter(Boolean).join(' ');
 
-  const legendClasses = [
-    styles.legend,
-    shouldFloatLabel && styles.floating,
-  ]
+  const legendClasses = [styles.legend, shouldFloatLabel && styles.floating]
     .filter(Boolean)
     .join(' ');
 
   return (
     <div className={styles.container}>
       <fieldset className={fieldsetClasses}>
-        {label && (
-          <legend className={legendClasses}>
-            {label}
-          </legend>
-        )}
+        {label && <legend className={legendClasses}>{label}</legend>}
         <input
-          ref={inputRef}  
+          ref={inputRef}
           id={inputId}
           className={inputClasses}
           value={currentValue}

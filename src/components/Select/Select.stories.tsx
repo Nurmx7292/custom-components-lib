@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import Select, { type SelectProps, type SelectOption } from './Select';
+import Select, { type SelectOption } from './Select';
 
 const ageOptions: SelectOption[] = [
   { value: '10', label: 'Ten' },
@@ -30,7 +29,6 @@ export const WithLabel: Story = {
   },
 };
 
-
 export const Disabled: Story = {
   args: {
     label: 'Disabled Select',
@@ -49,4 +47,3 @@ export const WithDisabledOptions: Story = {
     ],
   },
 };
-

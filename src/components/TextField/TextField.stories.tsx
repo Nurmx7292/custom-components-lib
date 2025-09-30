@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import TextField, { type TextFieldProps } from './TextField';
+import TextField from './TextField';
 
 const meta: Meta<typeof TextField> = {
   title: 'Components/TextField',
   component: TextField,
-  args: {
-    
-  },
+  args: {},
   argTypes: {
     error: { control: 'boolean' },
     disabled: { control: 'boolean' },
@@ -18,7 +15,6 @@ const meta: Meta<typeof TextField> = {
 
 export default meta;
 type Story = StoryObj<typeof TextField>;
-
 
 export const WithLabel: Story = {
   args: {
@@ -42,4 +38,3 @@ export const Disabled: Story = {
     value: 'Cannot edit this',
   },
 };
-
