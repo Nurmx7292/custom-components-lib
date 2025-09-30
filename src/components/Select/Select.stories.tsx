@@ -3,7 +3,6 @@ import React from 'react';
 import Select, { type SelectProps, type SelectOption } from './Select';
 
 const ageOptions: SelectOption[] = [
-  { value: '', label: 'None' },
   { value: '10', label: 'Ten' },
   { value: '20', label: 'Twenty' },
   { value: '30', label: 'Thirty' },
@@ -17,15 +16,12 @@ const meta: Meta<typeof Select> = {
   },
   argTypes: {
     disabled: { control: 'boolean' },
-    multiple: { control: 'boolean' },
     onChange: { action: 'changed' },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof Select>;
-
-export const Default: Story = {};
 
 export const WithLabel: Story = {
   args: {
@@ -34,11 +30,6 @@ export const WithLabel: Story = {
   },
 };
 
-export const WithPlaceholder: Story = {
-  args: {
-    placeholder: 'Choose an option',
-  },
-};
 
 export const Disabled: Story = {
   args: {
@@ -59,14 +50,3 @@ export const WithDisabledOptions: Story = {
   },
 };
 
-export const Multiple: Story = {
-  args: {
-    label: 'Multiple Selection',
-    multiple: true,
-    options: [
-      { value: 'red', label: 'Red' },
-      { value: 'green', label: 'Green' },
-      { value: 'blue', label: 'Blue' },
-    ],
-  },
-};
